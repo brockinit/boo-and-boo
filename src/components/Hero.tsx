@@ -4,8 +4,19 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="paper-grain relative w-full overflow-hidden bg-parchment"
+      className="paper-grain relative w-full overflow-hidden"
     >
+      {/* Vineyard-AI background */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/vineyard-ai-bg.svg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+        }}
+      />
+      {/* Parchment veil — preserves editorial legibility */}
+      <div className="absolute inset-0 z-0 bg-parchment" style={{ opacity: 0.82 }} />
       {/* Top label band — runs full width above content */}
       <div className="relative z-10 border-b border-rule">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 pt-24 sm:pt-28">

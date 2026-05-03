@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#060412"/>
+      <stop offset="42%" stop-color="#0e0c22"/>
+      <stop offset="70%" stop-color="#2a1608"/>
+      <stop offset="100%" stop-color="#160d04"/>
+    </linearGradient>
+    <radialGradient id="horizonGlow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#c4893b" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#c4893b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="nodeGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="hubGlow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lineGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="800" fill="url(#skyGrad)"/>
+
+  <!-- Stars -->
+  <g fill="#e8dfc8" opacity="0.75">
+    <circle cx="48" cy="38" r="0.9"/><circle cx="115" cy="72" r="1.3"/>
+    <circle cx="82" cy="155" r="0.8"/><circle cx="205" cy="25" r="0.9"/>
+    <circle cx="172" cy="92" r="1.3"/><circle cx="310" cy="48" r="0.9"/>
+    <circle cx="288" cy="132" r="1.0"/><circle cx="425" cy="18" r="1.3"/>
+    <circle cx="392" cy="98" r="0.8"/><circle cx="508" cy="58" r="0.9"/>
+    <circle cx="472" cy="165" r="1.3"/><circle cx="618" cy="28" r="0.8"/>
+    <circle cx="585" cy="102" r="0.9"/><circle cx="718" cy="45" r="1.3"/>
+    <circle cx="692" cy="148" r="0.9"/><circle cx="808" cy="22" r="0.9"/>
+    <circle cx="832" cy="85" r="1.3"/><circle cx="778" cy="168" r="0.8"/>
+    <circle cx="938" cy="38" r="0.9"/><circle cx="908" cy="125" r="1.3"/>
+    <circle cx="1018" cy="62" r="0.9"/><circle cx="1052" cy="20" r="1.3"/>
+    <circle cx="988" cy="148" r="0.8"/><circle cx="1128" cy="42" r="0.9"/>
+    <circle cx="1158" cy="115" r="1.3"/><circle cx="1092" cy="178" r="0.9"/>
+    <circle cx="52" cy="245" r="0.8"/><circle cx="162" cy="212" r="1.3"/>
+    <circle cx="332" cy="228" r="0.8"/><circle cx="498" cy="248" r="0.9"/>
+    <circle cx="638" cy="218" r="1.3"/><circle cx="808" cy="235" r="0.8"/>
+    <circle cx="972" cy="208" r="1.3"/><circle cx="1148" cy="242" r="0.8"/>
+    <circle cx="22" cy="185" r="1.0"/><circle cx="1182" cy="55" r="0.8"/>
+  </g>
+
+  <!-- Horizon amber glow band -->
+  <ellipse cx="600" cy="500" rx="720" ry="90" fill="#c4893b" opacity="0.16"/>
+  <rect x="0" y="455" width="1200" height="80" fill="url(#horizonGlow)"/>
+
+  <!-- Hill silhouettes -->
+  <path d="M0,512 C90,490 200,505 310,495 C420,482 480,466 560,458 C610,452 650,450 700,456 C800,468 900,492 1000,482 C1080,474 1145,462 1200,470 L1200,518 L0,518 Z" fill="#09080a"/>
+  <path d="M0,518 C130,510 270,522 420,512 C530,504 580,498 600,496 C640,494 740,506 900,516 C1020,524 1130,512 1200,518 L1200,524 L0,524 Z" fill="#070607"/>
+
+  <!-- Vineyard rows converging to vanishing point (600, 492) -->
+  <!-- 16 strips, bottom at y=790 -->
+  <polygon points="0,790 75,790 600,492" fill="#0c1108"/>
+  <polygon points="75,790 150,790 600,492" fill="#2a4a1c"/>
+  <polygon points="150,790 225,790 600,492" fill="#0a0f07"/>
+  <polygon points="225,790 300,790 600,492" fill="#2e5220"/>
+  <polygon points="300,790 375,790 600,492" fill="#0c1108"/>
+  <polygon points="375,790 450,790 600,492" fill="#284618"/>
+  <polygon points="450,790 525,790 600,492" fill="#0a0e07"/>
+  <polygon points="525,790 600,790 600,492" fill="#2c501e"/>
+  <polygon points="600,790 675,790 600,492" fill="#0a0e07"/>
+  <polygon points="675,790 750,790 600,492" fill="#284618"/>
+  <polygon points="750,790 825,790 600,492" fill="#0c1108"/>
+  <polygon points="825,790 900,790 600,492" fill="#2e5220"/>
+  <polygon points="900,790 975,790 600,492" fill="#0a0f07"/>
+  <polygon points="975,790 1050,790 600,492" fill="#2a4a1c"/>
+  <polygon points="1050,790 1125,790 600,492" fill="#0c1108"/>
+  <polygon points="1125,790 1200,790 600,492" fill="#284618"/>
+
+  <!-- Horizontal vine row depth lines -->
+  <g stroke="#3a5828" stroke-width="0.5" opacity="0.45">
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="0" y1="648" x2="1200" y2="648"/>
+    <line x1="0" y1="700" x2="1200" y2="700"/>
+    <line x1="0" y1="752" x2="1200" y2="752"/>
+  </g>
+
+  <!-- Earth below rows -->
+  <rect x="0" y="790" width="1200" height="10" fill="#070604"/>
+
+  <!-- ── AI Neural Network ── -->
+
+  <!-- Connection lines -->
+  <g filter="url(#lineGlow)" opacity="0.55">
+    <!-- Top tier (sage) -->
+    <line x1="90" y1="95" x2="240" y2="68" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="240" y1="68" x2="395" y2="112" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="395" y1="112" x2="548" y2="72" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="548" y1="72" x2="702" y2="108" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="702" y1="108" x2="850" y2="58" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="850" y1="58" x2="1005" y2="118" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="1005" y1="118" x2="1145" y2="88" stroke="#5f7351" stroke-width="0.9"/>
+
+    <!-- Mid tier (sage) -->
+    <line x1="160" y1="218" x2="330" y2="200" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="330" y1="200" x2="495" y2="242" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="495" y1="242" x2="655" y2="215" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="655" y1="215" x2="820" y2="248" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="820" y1="248" x2="1000" y2="228" stroke="#5f7351" stroke-width="0.9"/>
+
+    <!-- Lower tier (sage) -->
+    <line x1="245" y1="335" x2="450" y2="318" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="450" y1="318" x2="650" y2="352" stroke="#5f7351" stroke-width="0.9"/>
+    <line x1="650" y1="352" x2="870" y2="332" stroke="#5f7351" stroke-width="0.9"/>
+
+    <!-- Horizon hub connections (amber) -->
+    <line x1="380" y1="415" x2="600" y2="398" stroke="#c4893b" stroke-width="1.1"/>
+    <line x1="600" y1="398" x2="820" y2="420" stroke="#c4893b" stroke-width="1.1"/>
+
+    <!-- Cross-level connections (amber diagonals) -->
+    <line x1="90" y1="95" x2="160" y2="218" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="240" y1="68" x2="160" y2="218" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="240" y1="68" x2="330" y2="200" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="395" y1="112" x2="330" y2="200" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="395" y1="112" x2="495" y2="242" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="548" y1="72" x2="495" y2="242" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="548" y1="72" x2="655" y2="215" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="702" y1="108" x2="655" y2="215" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="850" y1="58" x2="820" y2="248" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="1005" y1="118" x2="1000" y2="228" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="1145" y1="88" x2="1000" y2="228" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="160" y1="218" x2="245" y2="335" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="330" y1="200" x2="245" y2="335" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="330" y1="200" x2="450" y2="318" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="495" y1="242" x2="450" y2="318" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="655" y1="215" x2="650" y2="352" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="820" y1="248" x2="870" y2="332" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="1000" y1="228" x2="870" y2="332" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="245" y1="335" x2="380" y2="415" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="450" y1="318" x2="380" y2="415" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="450" y1="318" x2="600" y2="398" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="650" y1="352" x2="600" y2="398" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="650" y1="352" x2="820" y2="420" stroke="#b3803a" stroke-width="0.65"/>
+    <line x1="870" y1="332" x2="820" y2="420" stroke="#b3803a" stroke-width="0.65"/>
+
+    <!-- Long-range skip connections (dashed oxblood) -->
+    <line x1="240" y1="68" x2="495" y2="242" stroke="#6b1e2a" stroke-width="0.55" stroke-dasharray="5,5"/>
+    <line x1="702" y1="108" x2="870" y2="332" stroke="#6b1e2a" stroke-width="0.55" stroke-dasharray="5,5"/>
+    <line x1="395" y1="112" x2="650" y2="352" stroke="#6b1e2a" stroke-width="0.55" stroke-dasharray="5,5"/>
+    <line x1="850" y1="58" x2="650" y2="352" stroke="#6b1e2a" stroke-width="0.55" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- AI Nodes -->
+  <g filter="url(#nodeGlow)">
+    <!-- Top tier — amber -->
+    <circle cx="90" cy="95" r="3.5" fill="#d8ad6e"/>
+    <circle cx="240" cy="68" r="4.5" fill="#c4893b"/>
+    <circle cx="395" cy="112" r="3.5" fill="#d8ad6e"/>
+    <circle cx="548" cy="72" r="4.5" fill="#c4893b"/>
+    <circle cx="702" cy="108" r="3.5" fill="#d8ad6e"/>
+    <circle cx="850" cy="58" r="4.5" fill="#c4893b"/>
+    <circle cx="1005" cy="118" r="3.5" fill="#d8ad6e"/>
+    <circle cx="1145" cy="88" r="4.5" fill="#c4893b"/>
+
+    <!-- Mid tier — sage -->
+    <circle cx="160" cy="218" r="4" fill="#7a9168"/>
+    <circle cx="330" cy="200" r="3.5" fill="#5f7351"/>
+    <circle cx="495" cy="242" r="4" fill="#7a9168"/>
+    <circle cx="655" cy="215" r="3.5" fill="#5f7351"/>
+    <circle cx="820" cy="248" r="4" fill="#7a9168"/>
+    <circle cx="1000" cy="228" r="3.5" fill="#5f7351"/>
+
+    <!-- Lower tier — oxblood -->
+    <circle cx="245" cy="335" r="3.5" fill="#8a2534"/>
+    <circle cx="450" cy="318" r="4" fill="#6b1e2a"/>
+    <circle cx="650" cy="352" r="3.5" fill="#8a2534"/>
+    <circle cx="870" cy="332" r="4" fill="#6b1e2a"/>
+
+    <!-- Horizon hub nodes — bright amber -->
+    <circle cx="380" cy="415" r="5" fill="#d8ad6e"/>
+    <circle cx="600" cy="398" r="7" fill="#c4893b"/>
+    <circle cx="820" cy="420" r="5" fill="#d8ad6e"/>
+  </g>
+
+  <!-- Central hub extra glow -->
+  <circle cx="600" cy="398" r="7" fill="#c4893b" opacity="0.5" filter="url(#hubGlow)"/>
+</svg>
