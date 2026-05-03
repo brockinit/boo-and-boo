@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "boo-and-boo",
-  description: "A small, opinionated Next.js boilerplate.",
+  title: "VineIQ",
+  description: "A living network of insight.",
 };
 
 export default function RootLayout({

@@ -1,8 +1,9 @@
-# boo-and-boo
+# VineIQ (boo-and-boo)
 
-A small, opinionated [Next.js](https://nextjs.org) boilerplate. App Router,
-TypeScript, Tailwind v4, and a tiny set of example primitives — enough to start
-building, not so much that you have to delete things first.
+A small, opinionated [Next.js](https://nextjs.org) boilerplate with a
+futuristic animated landing page. App Router, TypeScript, Tailwind v4,
+[d3](https://d3js.org/) for the visuals, and a tiny set of example primitives
+— enough to start building, not so much that you have to delete things first.
 
 ## Stack
 
@@ -11,6 +12,7 @@ building, not so much that you have to delete things first.
 - **TypeScript 5**
 - **Tailwind CSS v4** (via `@tailwindcss/postcss`)
 - **ESLint 9** with `eslint-config-next`
+- **d3** for SVG-driven animations (used by the landing page)
 
 ## Getting started
 
@@ -37,12 +39,13 @@ you edit files.
 src/
   app/
     layout.tsx        Root layout — html/body, fonts, global styles.
-    page.tsx          Landing page (/). Demonstrates the components.
-    globals.css       Tailwind import + global tokens.
+    page.tsx          Landing page (/) — VineIQ wordmark + animated graphic.
+    globals.css       Tailwind import, theme tokens, vine-* keyframes.
     api/
       hello/
         route.ts      Example Route Handler at GET /api/hello.
   components/
+    VineGraphic.tsx   Animated d3 SVG used as the homepage background.
     Button.tsx        Tiny button primitive with variants.
     Card.tsx          Tiny card primitive (title / description / children).
   lib/
