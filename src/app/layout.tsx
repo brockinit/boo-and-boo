@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VineIQ",
-  description: "A living network of insight.",
+  title: "VineIQ — AI for the wineries surviving the reckoning",
+  description:
+    "VineIQ builds AI workflows for enterprise wineries in Napa & Sonoma — predictive yield, fermentation intelligence, precision viticulture, and DTC personalization.",
 };
 
 export default function RootLayout({
