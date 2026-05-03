@@ -406,7 +406,7 @@ export function NetworkIllustration() {
     [160, 38, "POS"],
     [50, 90, "Cellar"],
     [150, 92, "DTC"],
-    [100, 70, "VineIQ"],
+    [100, 70, "Brix"],
   ];
   return (
     <svg {...baseProps}>
@@ -428,7 +428,7 @@ export function NetworkIllustration() {
       )}
       {/* nodes */}
       {nodes.map(([x, y, label], i) => {
-        const isHub = label === "VineIQ";
+        const isHub = label === "Brix";
         return (
           <g key={i}>
             <circle

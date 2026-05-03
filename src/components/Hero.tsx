@@ -10,7 +10,7 @@ export function Hero() {
       <div className="relative z-10 border-b border-rule">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 pt-24 sm:pt-28">
           <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-oxblood">
-            VineIQ — Quarterly · No. 1
+            Brix — Quarterly · No. 1
           </p>
           <p className="hidden font-mono text-[10px] uppercase tracking-[0.4em] text-ink/60 sm:block">
             Napa · Sonoma · Spring 2026

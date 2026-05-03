@@ -5,7 +5,7 @@ export function Footer() {
         <div className="flex flex-col items-start gap-8 border-b border-cream/15 pb-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="font-display text-3xl font-semibold tracking-tight">
-              Vine<span className="italic text-amber-soft">IQ</span>
+              Brix
             </p>
             <p className="mt-3 max-w-md text-sm leading-6 text-cream/65">
               AI consultancy for the California wine industry. Crafted in
@@ -29,7 +29,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col gap-4 font-mono text-[10px] uppercase tracking-[0.32em] text-cream/45 sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} VineIQ. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Brix. All rights reserved.</p>
           <p>Santa Rosa · 38.4404° N · 122.7141° W</p>
         </div>
       </div>

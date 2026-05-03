@@ -99,7 +99,7 @@ export function Playbook() {
                   className="inline-block h-1 w-8 bg-oxblood"
                 />
                 <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink-mute">
-                  VineIQ engagement principle
+                  Brix engagement principle
                 </p>
               </div>
             </div>

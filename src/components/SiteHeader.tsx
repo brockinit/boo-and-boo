@@ -3,12 +3,12 @@ import Link from "next/link";
 export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-rule/60 bg-parchment/85 backdrop-blur-xl">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link
           href="#top"
-          className="font-display text-lg font-semibold tracking-tight text-ink"
+          className="font-display text-2xl font-semibold leading-none tracking-tight text-ink sm:text-3xl"
         >
-          Vine<span className="italic text-oxblood">IQ</span>
+          Brix
         </Link>
         <nav className="hidden items-center gap-8 font-mono text-[10px] uppercase tracking-[0.32em] text-ink-soft sm:flex">
           <a href="#reckoning" className="transition hover:text-ink">

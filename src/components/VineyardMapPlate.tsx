@@ -21,7 +21,7 @@ export function VineyardMapPlate() {
             aria-labelledby="plate-title plate-desc"
           >
             <title id="plate-title">
-              Sonoma Valley vineyard survey — VineIQ Plate I
+              Sonoma Valley vineyard survey — Brix Plate I
             </title>
             <desc id="plate-desc">
               A hand-drawn editorial topographic map showing vineyard blocks,
@@ -651,7 +651,7 @@ export function VineyardMapPlate() {
               fill={ink}
               opacity="0.7"
             >
-              VINEIQ FIELD STUDY
+              BRIX FIELD STUDY
             </text>
             <text
               x="568"

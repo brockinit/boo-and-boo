@@ -45,7 +45,7 @@ export async function POST(request: Request) {
 
   // No mail provider wired up yet — log the inquiry server-side so the team
   // can pick it up out of band. Swap this for Resend/Postmark/SES later.
-  console.log("[vineiq:contact]", {
+  console.log("[brix:contact]", {
     receivedAt: new Date().toISOString(),
     name: body.name,
     role: body.role,

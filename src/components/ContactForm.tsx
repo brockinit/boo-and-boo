@@ -107,7 +107,7 @@ export function ContactForm() {
       <div className="flex flex-col-reverse gap-5 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-5 text-ink-mute">
           We respond to qualified inquiries within two business days. Your
-          information stays with the VineIQ partnership team.
+          information stays with the Brix partnership team.
         </p>
         <button
           type="submit"

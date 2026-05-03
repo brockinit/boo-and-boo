@@ -47,10 +47,10 @@ export function Contact() {
                 Direct
               </p>
               <a
-                href="mailto:partners@vineiq.ai"
+                href="mailto:partners@brix.ai"
                 className="font-display mt-3 block text-xl text-oxblood underline-offset-4 hover:underline"
               >
-                partners@vineiq.ai
+                partners@brix.ai
               </a>
             </div>
 

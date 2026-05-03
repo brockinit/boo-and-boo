@@ -15,9 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "VineIQ — AI for the wineries of Napa & Sonoma",
+  title: "Brix — AI for the wineries of Napa & Sonoma",
   description:
-    "VineIQ builds AI workflows for enterprise wineries in Napa & Sonoma — predictive yield, fermentation intelligence, precision viticulture, and DTC personalization.",
+    "Brix builds AI workflows for enterprise wineries in Napa & Sonoma — predictive yield, fermentation intelligence, precision viticulture, and DTC personalization.",
 };
 
 export default function RootLayout({
