@@ -37,8 +37,8 @@ export function ContactForm() {
         throw new Error(body?.error ?? `Request failed (${res.status})`);
       }
 
-      setStatus("success");
       event.currentTarget.reset();
+      setStatus("success");
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
