@@ -1,77 +1,90 @@
-import { VineGraphic } from "@/components/VineGraphic";
+import { VineyardMapPlate } from "@/components/VineyardMapPlate";
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black"
+      className="paper-grain relative w-full overflow-hidden bg-parchment"
     >
-      <VineGraphic />
-
-      <div
-        aria-hidden
-        className="absolute inset-x-0 bottom-0 z-10 h-48 bg-gradient-to-b from-transparent to-[#050314]"
-      />
-
-      <div className="relative z-20 mx-auto flex max-w-3xl flex-col items-center gap-7 px-6 text-center">
-        <span className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.32em] text-white/70 backdrop-blur">
-          Napa · Sonoma · Santa Rosa
-        </span>
-
-        <h1 className="vine-wordmark font-sans text-6xl font-bold tracking-tight text-white sm:text-8xl">
-          <span
-            style={{
-              background: "linear-gradient(135deg,#ede9fe 0%,#a5f3fc 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Vine
-          </span>
-          <span
-            style={{
-              background: "linear-gradient(135deg,#22d3ee 0%,#34d399 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            IQ
-          </span>
-        </h1>
-
-        <p className="text-balance max-w-2xl text-lg leading-8 text-white/75 sm:text-xl">
-          AI workflows for the wineries surviving California&apos;s reckoning.
-          We turn fragmented vineyard, cellar, and DTC data into the operating
-          intelligence enterprise producers need to protect margin.
-        </p>
-
-        <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="#contact"
-            className="rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-900 shadow-[0_0_24px_rgba(165,243,252,0.4)] transition hover:bg-cyan-100"
-          >
-            Book a discovery call
-          </a>
-          <a
-            href="#capabilities"
-            className="rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white/90 transition hover:bg-white/10"
-          >
-            See where we move the needle
-          </a>
-        </div>
-
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.28em] text-white/45">
-          <span>Predictive yield</span>
-          <span aria-hidden>·</span>
-          <span>Fermentation intelligence</span>
-          <span aria-hidden>·</span>
-          <span>Precision viticulture</span>
-          <span aria-hidden>·</span>
-          <span>DTC personalization</span>
+      {/* Top label band — runs full width above content */}
+      <div className="relative z-10 border-b border-rule">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 pt-24 sm:pt-28">
+          <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-oxblood">
+            VineIQ — Quarterly · No. 1
+          </p>
+          <p className="hidden font-mono text-[10px] uppercase tracking-[0.4em] text-ink/60 sm:block">
+            Napa · Sonoma · Spring 2026
+          </p>
         </div>
       </div>
+
+      <div className="relative mx-auto grid max-w-6xl gap-14 px-6 py-20 lg:grid-cols-12 lg:gap-12 lg:py-28">
+        <div className="flex flex-col justify-center lg:col-span-6">
+          <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-sage-deep">
+            A monograph for the wineries of California
+          </p>
+
+          <h1 className="font-display mt-7 text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.025em] text-ink sm:text-6xl lg:text-[5.25rem]">
+            AI for the wineries of{" "}
+            <em className="italic text-oxblood">Napa & Sonoma</em>.
+          </h1>
+
+          <div className="mt-10 max-w-xl border-l-2 border-oxblood pl-6">
+            <p className="text-pretty text-lg leading-8 text-ink-soft">
+              We turn fragmented vineyard, cellar, and direct-to-consumer data
+              into the operating intelligence enterprise producers need to
+              protect margin through California&apos;s reckoning.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="#contact"
+              className="bg-ink px-7 py-3.5 text-sm font-medium tracking-wide text-cream transition hover:bg-oxblood"
+            >
+              Request a discovery call
+            </a>
+            <a
+              href="#capabilities"
+              className="border border-ink/40 px-7 py-3.5 text-sm font-medium tracking-wide text-ink transition hover:border-ink hover:bg-ink/5"
+            >
+              Read the playbook
+            </a>
+          </div>
+
+          <div className="mt-12 border-t border-rule pt-6">
+            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-ink-mute">
+              In this issue
+            </p>
+            <ol className="mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-sm text-ink-soft">
+              {[
+                ["I.", "The reckoning", "#reckoning"],
+                ["II.", "Five workflows", "#capabilities"],
+                ["III.", "The playbook", "#playbook"],
+                ["IV.", "Who we serve", "#segment"],
+                ["V.", "Begin a conversation", "#contact"],
+              ].map(([num, label, href]) => (
+                <li key={href} className="flex items-baseline gap-3">
+                  <span className="font-display text-oxblood">{num}</span>
+                  <a
+                    href={href}
+                    className="border-b border-transparent transition hover:border-oxblood"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+
+        <div className="flex items-center lg:col-span-6">
+          <VineyardMapPlate />
+        </div>
+      </div>
+
+      {/* Bottom hairline transition */}
+      <div className="hairline" />
     </section>
   );
 }

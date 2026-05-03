@@ -47,36 +47,21 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-emerald-300/30 bg-emerald-300/[0.06] p-8 text-center">
-        <div
-          aria-hidden
-          className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-emerald-300/40 bg-emerald-300/10"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="h-5 w-5 text-emerald-200"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-        </div>
-        <h3 className="text-xl font-semibold text-white">
-          Got it. We&apos;ll be in touch within two business days.
+      <div className="border-2 border-sage-deep bg-cream p-10 text-center">
+        <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-sage-deep">
+          Inquiry received
+        </p>
+        <h3 className="font-display mt-5 text-2xl font-semibold leading-tight text-ink">
+          Thank you. A partner will reply within two business days.
         </h3>
-        <p className="mt-3 text-sm leading-6 text-white/65">
-          A partner will review your context and reply with a proposed agenda
-          for a 30-minute discovery call.
+        <p className="mt-4 text-sm leading-6 text-ink-soft">
+          We will review your context and propose an agenda for a 30-minute
+          discovery call.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 text-sm text-cyan-200 underline-offset-4 hover:underline"
+          className="mt-7 font-mono text-[10px] uppercase tracking-[0.32em] text-oxblood underline-offset-4 hover:underline"
         >
           Submit another inquiry
         </button>
@@ -87,29 +72,20 @@ export function ContactForm() {
   const submitting = status === "submitting";
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className="grid gap-6">
+      <div className="grid gap-6 sm:grid-cols-2">
         <Field label="Your name" name="name" required />
         <Field
           label="Role or title"
           name="role"
-          placeholder="e.g. VP, Operations"
+          placeholder="VP, Operations"
           required
         />
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Field
-          label="Winery or company"
-          name="company"
-          required
-        />
-        <Field
-          label="Work email"
-          name="email"
-          type="email"
-          required
-        />
+      <div className="grid gap-6 sm:grid-cols-2">
+        <Field label="Winery or company" name="company" required />
+        <Field label="Work email" name="email" type="email" required />
       </div>
 
       <SelectField
@@ -122,19 +98,21 @@ export function ContactForm() {
       <TextAreaField
         label="What's keeping you up at night?"
         name="message"
-        placeholder="Briefly describe the operational pain you're hoping to solve. The more specific, the better."
+        placeholder="Briefly describe the operational pain you are hoping to solve. The more specific, the better."
         required
       />
 
-      <div className="mt-2 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs leading-5 text-white/50">
+      <div className="hairline mt-2" />
+
+      <div className="flex flex-col-reverse gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs leading-5 text-ink-mute">
           We respond to qualified inquiries within two business days. Your
           information stays with the VineIQ partnership team.
         </p>
         <button
           type="submit"
           disabled={submitting}
-          className="rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-900 shadow-[0_0_24px_rgba(165,243,252,0.4)] transition hover:bg-cyan-100 disabled:cursor-not-allowed disabled:opacity-60"
+          className="bg-ink px-7 py-3.5 text-sm font-medium tracking-wide text-cream transition hover:bg-oxblood disabled:cursor-not-allowed disabled:opacity-60"
         >
           {submitting ? "Sending…" : "Request discovery call"}
         </button>
@@ -143,7 +121,7 @@ export function ContactForm() {
       {status === "error" && errorMsg ? (
         <p
           role="alert"
-          className="rounded-lg border border-rose-400/30 bg-rose-400/10 px-4 py-3 text-sm text-rose-100"
+          className="border border-oxblood bg-oxblood/5 px-4 py-3 text-sm text-oxblood"
         >
           {errorMsg}
         </p>
@@ -160,19 +138,25 @@ type FieldProps = {
   required?: boolean;
 };
 
-function Field({ label, name, type = "text", placeholder, required }: FieldProps) {
+function Field({
+  label,
+  name,
+  type = "text",
+  placeholder,
+  required,
+}: FieldProps) {
   return (
-    <label className="flex flex-col gap-2 text-sm">
-      <span className="text-[11px] uppercase tracking-[0.22em] text-white/50">
+    <label className="flex flex-col gap-2">
+      <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink-mute">
         {label}
-        {required ? <span className="text-fuchsia-300">*</span> : null}
+        {required ? <span className="text-oxblood"> *</span> : null}
       </span>
       <input
         name={name}
         type={type}
         placeholder={placeholder}
         required={required}
-        className="rounded-lg border border-white/10 bg-[#0a061f] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
+        className="border-b border-ink/30 bg-transparent px-1 py-2.5 font-display text-base text-ink placeholder:text-ink-mute/60 outline-none transition focus:border-oxblood"
       />
     </label>
   );
@@ -190,16 +174,16 @@ function SelectField({
   required?: boolean;
 }) {
   return (
-    <label className="flex flex-col gap-2 text-sm">
-      <span className="text-[11px] uppercase tracking-[0.22em] text-white/50">
+    <label className="flex flex-col gap-2">
+      <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink-mute">
         {label}
-        {required ? <span className="text-fuchsia-300">*</span> : null}
+        {required ? <span className="text-oxblood"> *</span> : null}
       </span>
       <select
         name={name}
         required={required}
         defaultValue=""
-        className="rounded-lg border border-white/10 bg-[#0a061f] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
+        className="border-b border-ink/30 bg-transparent px-1 py-2.5 font-display text-base text-ink outline-none transition focus:border-oxblood"
       >
         <option value="" disabled>
           Select a range…
@@ -226,17 +210,17 @@ function TextAreaField({
   required?: boolean;
 }) {
   return (
-    <label className="flex flex-col gap-2 text-sm">
-      <span className="text-[11px] uppercase tracking-[0.22em] text-white/50">
+    <label className="flex flex-col gap-2">
+      <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-ink-mute">
         {label}
-        {required ? <span className="text-fuchsia-300">*</span> : null}
+        {required ? <span className="text-oxblood"> *</span> : null}
       </span>
       <textarea
         name={name}
         rows={5}
         placeholder={placeholder}
         required={required}
-        className="resize-none rounded-lg border border-white/10 bg-[#0a061f] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/20"
+        className="resize-none border border-ink/20 bg-cream/50 px-3 py-3 text-base text-ink placeholder:text-ink-mute/60 outline-none transition focus:border-oxblood"
       />
     </label>
   );

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main className="flex min-h-screen w-full flex-col bg-[#050314] text-white">
+      <main className="flex min-h-screen w-full flex-col bg-parchment text-ink">
         <Hero />
         <PainPoints />
         <Capabilities />

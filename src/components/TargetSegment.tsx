@@ -11,82 +11,81 @@ export function TargetSegment() {
   return (
     <section
       id="segment"
-      className="relative border-t border-white/[0.06] bg-[#04020e] py-24 sm:py-32"
+      className="paper-grain relative bg-paper py-24 sm:py-32"
     >
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-14 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <span className="text-[11px] font-medium uppercase tracking-[0.32em] text-fuchsia-200/80">
-              Who we serve
-            </span>
-            <h2 className="text-balance mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Built for the enterprise producers of Napa & Sonoma.
+      <div className="relative mx-auto max-w-6xl px-6">
+        <header className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-oxblood">
+              IV. Who we serve
+            </p>
+            <div className="mt-3 h-px w-12 bg-oxblood" />
+          </div>
+          <div className="lg:col-span-9">
+            <h2 className="font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink sm:text-5xl lg:text-6xl">
+              Built for the enterprise estates of{" "}
+              <em className="italic text-oxblood">Napa & Sonoma</em>.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="text-pretty mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
               Bespoke AI architecture is justified by operational complexity,
               data volume, and capital reserves. We focus where those three
               converge — the multi-brand, multi-estate producers whose
               decisions ripple across the corridor.
             </p>
-
-            <dl className="mt-10 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-              {[
-                ["10", "enterprise targets in Napa & Sonoma"],
-                ["100M+", "cases of combined annual production"],
-                ["50K+", "acres under management at the largest"],
-              ].map(([figure, label]) => (
-                <div
-                  key={label}
-                  className="bg-[#0a061f] p-5 text-center sm:p-6"
-                >
-                  <div
-                    className="text-2xl font-semibold tracking-tight sm:text-3xl"
-                    style={{
-                      background:
-                        "linear-gradient(135deg,#a78bfa 0%,#22d3ee 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    {figure}
-                  </div>
-                  <p className="mt-2 text-[11px] uppercase tracking-[0.18em] text-white/45">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </dl>
           </div>
+        </header>
 
-          <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent p-8">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200/70">
-                Signals we&apos;re a fit
-              </p>
-              <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-                {SIGNALS.map((s) => (
-                  <li
-                    key={s}
-                    className="flex items-start gap-3 text-sm leading-6 text-white/75"
-                  >
-                    <span
-                      aria-hidden
-                      className="mt-2 inline-block h-1.5 w-1.5 flex-none rounded-full bg-gradient-to-br from-fuchsia-300 to-cyan-300"
-                    />
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ul>
+        <div className="hairline mt-16" />
 
-              <div className="mt-8 rounded-xl border border-white/10 bg-[#0a061f] p-6">
-                <p className="text-sm leading-6 text-white/75">
-                  If you&apos;re running a single boutique label, we&apos;re
-                  the wrong partner — and we&apos;ll tell you on the call. We
-                  build for the operational complexity that justifies a
-                  custom-architected engagement.
+        <div className="mt-16 grid gap-12 lg:grid-cols-12">
+          <dl className="grid grid-cols-3 gap-px overflow-hidden bg-rule lg:col-span-5">
+            {[
+              ["10", "enterprise targets in Napa & Sonoma"],
+              ["100M+", "cases of combined annual production"],
+              ["50K+", "acres under management at the largest"],
+            ].map(([figure, label]) => (
+              <div
+                key={label}
+                className="flex flex-col gap-4 bg-cream p-6 text-center"
+              >
+                <div className="font-display text-3xl font-semibold leading-none tracking-[-0.02em] text-oxblood sm:text-4xl">
+                  {figure}
+                </div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-mute">
+                  {label}
                 </p>
               </div>
+            ))}
+          </dl>
+
+          <div className="lg:col-span-7">
+            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-sage-deep">
+              Signals we&apos;re a fit
+            </p>
+            <ul className="mt-5 grid gap-2 border-t border-rule sm:grid-cols-2">
+              {SIGNALS.map((s, i) => (
+                <li
+                  key={s}
+                  className="flex items-baseline gap-3 border-b border-rule py-3 text-sm leading-6 text-ink-soft sm:[&:nth-child(odd)]:border-r sm:[&:nth-child(odd)]:pr-5"
+                >
+                  <span
+                    aria-hidden
+                    className="font-mono text-[10px] text-oxblood"
+                  >
+                    0{i + 1}
+                  </span>
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 border-l-2 border-oxblood bg-cream/60 p-6">
+              <p className="font-display text-base italic leading-relaxed text-ink">
+                If you are running a single boutique label, we are the wrong
+                partner — and we will tell you on the call. We build for the
+                operational complexity that justifies a custom-architected
+                engagement.
+              </p>
             </div>
           </div>
         </div>
