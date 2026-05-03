@@ -21,10 +21,14 @@ type Particle = {
   duration: number;
 };
 
+// Math.cos/sin precision is implementation-defined; round so Node SSR and
+// browser CSR produce identical attribute strings during hydration.
+const q = (n: number) => Math.round(n * 1000) / 1000;
+
 function makeRingPath(count: number, radius: number): string {
   const points = d3.range(count).map<[number, number, number]>((i) => {
     const angle = (i / count) * Math.PI * 2;
-    return [angle, Math.cos(angle) * radius, Math.sin(angle) * radius];
+    return [angle, q(Math.cos(angle) * radius), q(Math.sin(angle) * radius)];
   });
   const data = points.map(([, x, y]) => ({ x, y }));
   data.push(data[0]);
@@ -43,12 +47,12 @@ function makeSpokes(
 ): { d: string; angle: number }[] {
   return d3.range(count).map((i) => {
     const angle = (i / count) * Math.PI * 2;
-    const x1 = Math.cos(angle) * innerRadius;
-    const y1 = Math.sin(angle) * innerRadius;
-    const x2 = Math.cos(angle) * outerRadius;
-    const y2 = Math.sin(angle) * outerRadius;
-    const cx = Math.cos(angle + 0.18) * (innerRadius + outerRadius) * 0.5;
-    const cy = Math.sin(angle + 0.18) * (innerRadius + outerRadius) * 0.5;
+    const x1 = q(Math.cos(angle) * innerRadius);
+    const y1 = q(Math.sin(angle) * innerRadius);
+    const x2 = q(Math.cos(angle) * outerRadius);
+    const y2 = q(Math.sin(angle) * outerRadius);
+    const cx = q(Math.cos(angle + 0.18) * (innerRadius + outerRadius) * 0.5);
+    const cy = q(Math.sin(angle + 0.18) * (innerRadius + outerRadius) * 0.5);
     return { d: `M${x1},${y1} Q${cx},${cy} ${x2},${y2}`, angle };
   });
 }
@@ -174,8 +178,8 @@ export function VineGraphic() {
           const points = d3.range(ring.count).map((j) => {
             const angle = (j / ring.count) * Math.PI * 2;
             return [
-              Math.cos(angle) * ring.radius,
-              Math.sin(angle) * ring.radius,
+              q(Math.cos(angle) * ring.radius),
+              q(Math.sin(angle) * ring.radius),
             ] as const;
           });
           return (
@@ -216,8 +220,8 @@ export function VineGraphic() {
 
       <g>
         {particles.map((p) => {
-          const x = Math.cos(p.angle) * p.radius;
-          const y = Math.sin(p.angle) * p.radius;
+          const x = q(Math.cos(p.angle) * p.radius);
+          const y = q(Math.sin(p.angle) * p.radius);
           return (
             <circle
               key={p.id}
